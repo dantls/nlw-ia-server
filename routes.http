@@ -1,9 +1,11 @@
-@name get-prompts
+# @name get-prompts
 
 GET http://localhost:3333/prompts
 
 ###
 
+
+# @name upload
 POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
@@ -13,3 +15,15 @@ Content-Type: audio/mpeg
 
 < ./example.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###
+
+# @name create-transcription
+
+POST http://localhost:3333/videos/9020c947-e668-4029-b619-b8de3cba5afc/transcription
+Content-Type: application/json
+
+{
+  "prompt": "art collection"
+}
